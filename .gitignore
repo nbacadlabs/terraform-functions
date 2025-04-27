@@ -1,0 +1,37 @@
+# Local .terraform/ directory
+.terraform/
+./bootstrap/.terraform/
+
+# Terraform state files
+*./bootstrap/tfstate
+*./bootstrap/tfstate.*
+
+*./bootstrap/tfstate
+*./bootstrap/tfstate.*
+
+# Crash logs
+crash.log
+
+# Exclude CLI configuration files
+.terraformrc
+terraform.rc
+
+# Sensitive variable files (optional, if you use them)
+*.tfvars
+*.tfvars.json
+
+# Backup files
+*.backup
+
+# Override files (locals for envs)
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Plan files (binary output from terraform plan -out=)
+*.tfplan
+
+# Core dumps (rare but can happen)
+core.*
+./bootstrap/.terraform/
