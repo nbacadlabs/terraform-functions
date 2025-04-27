@@ -31,21 +31,21 @@ pipeline {
         stage('Terraform Init') {
             steps {
                 sh 'pwd'
-                sh 'cd ./bootstrap'
+                sh 'cd /bootstrap'
                 sh 'terraform init'
             }
         }
 
         stage('Terraform Plan') {
             steps {
-                sh 'cd ./bootstrap'
+                sh 'cd /bootstrap'
                 sh 'terraform plan -out=tfplan'
             }
         }
 
         stage('Terraform Apply') {
             steps {
-                 sh 'cd ./bootstrap'
+                 sh 'cd /bootstrap'
                 input message: 'Approve Terraform Apply?'
                 sh 'terraform apply'
             }
