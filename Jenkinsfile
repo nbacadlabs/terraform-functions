@@ -40,10 +40,10 @@ pipeline {
             }
         }
 
-        stage('Terraform Destroy') {
+        stage('Terraform Apply') {
             steps {
-                input message: 'Approve Terraform Destroy?'
-                sh 'terraform destroy -auto-approve'
+                input message: 'Approve Terraform Apply?'
+                sh 'terraform apply -auto-approve'
             }
         }
     }
