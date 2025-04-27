@@ -28,11 +28,11 @@ pipeline {
             }
         }
 
-        stage('Terraform Init') {
-            steps {
-                sh 'terraform init'
-            }
-        }
+        // stage('Terraform Init') {
+        //     steps {
+        //         sh 'terraform init'
+        //     }
+        // }
 
         // stage('Terraform Plan') {
         //     steps {
@@ -43,7 +43,7 @@ pipeline {
         stage('Terraform Destroy') {
             steps {
                 input message: 'Approve Terraform Destroy?'
-                sh 'terraform destroy -out=tfplan'
+                sh 'terraform destroy'
             }
         }
     }

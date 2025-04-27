@@ -34,16 +34,16 @@ pipeline {
             }
         }
 
-        // stage('Terraform Plan') {
-        //     steps {
-        //         sh 'terraform plan -out=tfplan'
-        //     }
-        // }
-
-        stage('Terraform Destroy') {
+        stage('Terraform Plan') {
             steps {
-                input message: 'Approve Terraform Destroy?'
-                sh 'terraform destroy'
+                sh 'terraform plan -out=tfplan'
+            }
+        }
+
+        stage('Terraform Apply') {
+            steps {
+                input message: 'Approve Terraform Apply?'
+                sh 'terraform apply tfplan'
             }
         }
     }
