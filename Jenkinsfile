@@ -31,14 +31,16 @@ pipeline {
         stage('Terraform Init') {
             steps {
                 sh 'pwd'
-                sh 'cd /bootstrap'
+                sh 'ls /var/lib/jenkins/workspace/aws-functions'
+                sh 'cd /var/lib/jenkins/workspace/aws-functions/bootstrap'
                 sh 'terraform init'
             }
         }
 
         stage('Terraform Plan') {
             steps {
-                sh 'cd /bootstrap'
+                sh 'ls /var/lib/jenkins/workspace/aws-functions'
+                sh 'cd /var/lib/jenkins/workspace/aws-functions/bootstrap'
                 sh 'terraform plan -out=tfplan'
             }
         }
