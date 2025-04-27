@@ -42,7 +42,6 @@ pipeline {
 
         stage('Terraform Apply') {
             steps {
-                 sh 'cd /bootstrap'
                 input message: 'Approve Terraform Apply?'
                 sh 'terraform apply'
             }
