@@ -72,7 +72,7 @@ pipeline {
                 }
                 sh '''
                     cd ./aksbootstrap
-                    terraform approve -auto-approve
+                    terraform apply -auto-approve
                 '''
                 
                 // sh '''
