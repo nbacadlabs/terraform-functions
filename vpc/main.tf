@@ -4,10 +4,10 @@ locals {
 
 terraform {
   backend "s3" {
-    bucket         = "my-tf-backend-bucket"
+    bucket         = "nbmy-terraform-state-bucket-12345"
     key            = "vpc/dev/terraform.tfstate"
     region         = "us-east-1"
-    dynamodb_table = "tf-locks"
+    dynamodb_table = "terraform-locks"
     encrypt        = true
   }
 }
