@@ -28,22 +28,22 @@ pipeline {
             }
         }
 
-        stage('Terraform Init') {
-            steps {
-                sh 'terraform init'
-            }
-        }
+        // stage('Terraform Init') {
+        //     steps {
+        //         sh 'terraform init'
+        //     }
+        // }
 
-        stage('Terraform Plan') {
-            steps {
-                sh 'terraform plan -out=tfplan'
-            }
-        }
+        // stage('Terraform Plan') {
+        //     steps {
+        //         sh 'terraform plan -out=tfplan'
+        //     }
+        // }
 
-        stage('Terraform Apply') {
+        stage('Terraform Destroy') {
             steps {
-                input message: 'Approve Terraform Apply?'
-                sh 'terraform apply tfplan'
+                input message: 'Approve Terraform Destroy?'
+                sh 'terraform destroy'
             }
         }
     }
