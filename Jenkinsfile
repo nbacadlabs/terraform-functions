@@ -44,9 +44,9 @@ pipeline {
 
         stage('Terraform Destroy') {
             steps {
-                input message: 'Approve Terraform Destroy?'
+                input message: 'Approve Terraform Apply?'
                 sh 'cd ./bootstrap'
-                sh 'terraform destroy'
+                sh 'terraform apply'
             }
         }
     }
