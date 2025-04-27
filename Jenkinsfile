@@ -30,6 +30,7 @@ pipeline {
 
         stage('Terraform Init') {
             steps {
+                sh 'pwd'
                 sh 'cd ./bootstrap'
                 sh 'terraform init'
             }
