@@ -9,6 +9,15 @@
 *./bootstrap/tfstate
 *./bootstrap/tfstate.*
 
+./aksbootstrap/.terraform/
+
+# Terraform state files
+*./aksbootstrap/tfstate
+*./aksbootstrap/tfstate.*
+
+*./aksbootstrap/tfstate
+*./aksbootstrap/tfstate.*
+
 # Crash logs
 crash.log
 
