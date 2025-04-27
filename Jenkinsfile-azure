@@ -72,7 +72,7 @@ pipeline {
                 }
                 sh '''
                     cd ./aksbootstrap
-                    terraform destroy -auto-approve
+                    terraform approve -auto-approve
                 '''
                 
                 // sh '''
