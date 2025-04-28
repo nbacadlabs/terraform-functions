@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "nbmy-terraform-state-bucket-12345"
+  bucket = "nbmy-terraform-state-bucket-12309"
 
   force_destroy = true
 
