@@ -46,12 +46,12 @@ pipeline {
             }
         }
 
-        stage('Terraform Apply') {
+        stage('Terraform Destroy') {
             steps {
-                input message: 'Approve Terraform Apply?'
+                input message: 'Approve Terraform Destroy?'
                 sh '''
                     cd ./eks-infra
-                    terraform apply -auto-approve
+                    terraform destroy -auto-approve
                 '''
             }
         }
