@@ -31,7 +31,7 @@ pipeline {
         stage('Terraform Init') {
             steps {
                 sh '''
-                    cd ./aws-infra
+                    cd ./eks-infra
                     terraform init
                 '''
             }
@@ -40,7 +40,7 @@ pipeline {
         stage('Terraform Plan') {
             steps {
                 sh '''
-                cd ./aws-infra
+                cd ./eks-infra
                 terraform plan -out=tfplan
                 '''
             }
@@ -50,7 +50,7 @@ pipeline {
             steps {
                 input message: 'Approve Terraform Apply?'
                 sh '''
-                    cd ./aws-infra
+                    cd ./eks-infra
                     terraform apply -auto-approve
                 '''
             }
